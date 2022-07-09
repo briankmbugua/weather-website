@@ -13,8 +13,8 @@ let weather = (lat, long, callback) => {
             const {error:err} = body
             callback(err,undefined)
         } else {
-            const{weather_descriptions,temperature,precip} = body.current
-            let data = `The weather is currently ${weather_descriptions}, The temparature is ${temperature} degrees and there is ${precip} chance of raining.`
+            const{weather_descriptions,temperature,precip,feelslike} = body.current
+            let data = `The weather is currently ${weather_descriptions}, The temparature is ${temperature} degrees and there is ${precip} chance of raining. And it feelslike ${feelslike}`
             callback(undefined,data)
         }
     })
